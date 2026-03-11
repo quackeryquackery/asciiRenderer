@@ -5,7 +5,7 @@ Small program built using Java and JavaFX capable of animating a rotating polygo
 
 Run program with the following commands in terminal:
 
-git clone git@github.com:username/asciiRenderer.git
+git clone git@github.com:quackeryquackery/asciiRenderer.git
 cd asciiRenderer
 ./gradlew run
 
