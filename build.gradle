@@ -1,0 +1,51 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'org.example.Main' // include package if you have one
+    // applicationDefaultJvmArgs = ['-XstartOnFirstThread']
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
+
+/*
+def javafxPath = file('javafx-sdk-20/lib')
+
+tasks.withType(JavaExec) {
+    jvmArgs = [
+        '--module-path', javafxPath,
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+*/
+
+javafx {
+    version = '20'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
